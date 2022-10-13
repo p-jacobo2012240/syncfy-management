@@ -16,6 +16,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -61,13 +62,13 @@ public class AlertRepositoryImpl implements IMetricRepository {
 
     @Override
     public List<AlertDtoDomain> findAlertsByAuth(Long authId) {
-        Sort sort = Sort.by(Sort.Order.desc("alertId"));
-        Pageable pageInfo = PageRequest.of(10, 10, sort);
-        Specification<Alert> spec = specification.toSpec(authId);
-        Page<Alert> alertList =  alertRepository.findAll(spec, pageInfo);
+        //TEMP
+        List<Alert> alerts = alertRepository.findAll();
+        alerts = alerts.stream()
+                .filter(alert -> alert.getAuth().getAuthId() == authId)
+                .collect(Collectors.toList());
 
-        return alertList.getContent()
-                .stream()
+        return  alerts.stream()
                 .map(mapper::toDomain)
                 .collect(Collectors.toList());
     }

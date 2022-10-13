@@ -51,6 +51,7 @@ public class AuthRepositoryImpl implements IAuthRepository {
     }
     @Override
     public AuthDtoDomain findByContext(AuthDtoPayloadDomain payloadDomain) {
+        // TEMP
         List<Auth> results = authRepository.findAll();
         AuthDtoDomain authDtoDomain = null;
         for(Auth element: results) {

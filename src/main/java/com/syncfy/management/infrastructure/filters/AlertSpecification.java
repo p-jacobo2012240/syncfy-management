@@ -16,7 +16,7 @@ public class AlertSpecification {
             List<Predicate> predicates = new ArrayList<>();
 
             if (authId != null)
-                predicates.add(cb.equal(root.get("auth_id"), authId));
+                predicates.add(cb.equal(root.get("auth"), authId));
 
             query.distinct(true);
             return cb.and(predicates.toArray(Predicate[]::new));

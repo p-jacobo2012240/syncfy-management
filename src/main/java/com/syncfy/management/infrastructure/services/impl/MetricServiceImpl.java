@@ -26,11 +26,11 @@ public class MetricServiceImpl implements IMetricService {
 
     @Override
     public List<AlertDtoDomain> alertsByOAuth(String id) {
-        return null;
+        return alertRepository.findAlertsByAuth(Long.parseLong(id));
     }
 
     @Override
     public void deleteAlertByOAuth(String id) {
-
+        alertRepository.deleteById(Long.parseLong(id));
     }
 }

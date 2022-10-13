@@ -14,4 +14,6 @@ public class AuthDtoDomain {
     private String iss;
 
     private String nonce;
+
+    private String picture;
 }

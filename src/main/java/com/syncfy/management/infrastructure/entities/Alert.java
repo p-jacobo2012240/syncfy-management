@@ -30,6 +30,7 @@ public class Alert {
     @Column(name = "is_filter")
     private Boolean isFilter;
 
-    @Column(name = "auth_id")
-    private Integer authId;
+    @ManyToOne
+    @JoinColumn(name = "auth_id")
+    private Auth auth;
 }

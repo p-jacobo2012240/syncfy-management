@@ -20,5 +20,5 @@ public class AlertDtoDomain {
 
     private Boolean isValidForFilter;
 
-    private AuthDtoDomain domain;
+    private AuthDtoDomain auth;
 }

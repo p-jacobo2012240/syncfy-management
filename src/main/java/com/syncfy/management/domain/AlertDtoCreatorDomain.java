@@ -2,6 +2,7 @@ package com.syncfy.management.domain;
 
 import lombok.Data;
 
+import java.time.OffsetDateTime;
 import java.util.Date;
 
 @Data
@@ -9,9 +10,9 @@ public class AlertDtoCreatorDomain {
 
     private String name;
 
-    private Date creationDate;
+    private OffsetDateTime creationDate;
 
-    private Date expiryDate;
+    private OffsetDateTime  expiryDate;
 
     private String type;
 

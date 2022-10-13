@@ -1,0 +1,21 @@
+server.port: 8081
+
+spring:
+  application:
+    name: syncfy_management
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: root@2k22
+    driverClassName: org.postgresql.Driver
+    hikari:
+      schema: syncfy_configuration
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect
+  properties:
+    hibernate:
+      schema: syncfy_configuration
+
+springdoc:
+  api-docs:
+    path: /api-docs

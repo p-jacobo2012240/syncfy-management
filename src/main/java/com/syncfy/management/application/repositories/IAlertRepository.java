@@ -4,6 +4,6 @@ import com.syncfy.management.domain.AlertDtoDomain;
 
 import java.util.List;
 
-public interface IMetricRepository extends IBaseRepository<AlertDtoDomain, Long> {
+public interface IAlertRepository extends IBaseRepository<AlertDtoDomain, Long> {
     List<AlertDtoDomain> findAlertsByAuth(Long authId);
 }

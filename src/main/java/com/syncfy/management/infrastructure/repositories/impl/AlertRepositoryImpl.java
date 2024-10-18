@@ -32,11 +32,12 @@ public class AlertRepositoryImpl implements IAlertRepository {
     @Override
     public <S extends AlertDtoDomain> S save(S s) {
         Alert alert = mapper.toEntity(s);
-        Auth auth = authRepository.findById(alert.getAuth().getAuthId()).get();
+        Auth auth = authRepository.findById(null).get();
 
         //setting child entity
-        alert.setAuth(auth);
-        return (S) mapper.toDomain(alertRepository.save(alert));
+        // alert.setAuth(auth);
+        // return (S) mapper.toDomain(alertRepository.save(alert));
+        return null;
     }
 
     @Override
@@ -58,9 +59,9 @@ public class AlertRepositoryImpl implements IAlertRepository {
     public List<AlertDtoDomain> findAlertsByAuth(Long authId) {
         //TEMP
         List<Alert> alerts = alertRepository.findAll();
-        alerts = alerts.stream()
+        /** alerts = alerts.stream()
                 .filter(alert -> alert.getAuth().getAuthId() == authId)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()); */
 
         return  alerts.stream()
                 .map(mapper::toDomain)

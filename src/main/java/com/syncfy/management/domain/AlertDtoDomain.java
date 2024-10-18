@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 public class AlertDtoDomain {
 
-    private Long id;
+    private Long alertId;
 
     private String name;
 

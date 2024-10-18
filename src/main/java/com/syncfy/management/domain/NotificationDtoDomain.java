@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 @Data
 public class NotificationDtoDomain {
 
-    private Long id;
+    private Long notificationId;
 
     private String name;
 

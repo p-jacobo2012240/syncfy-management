@@ -1,9 +1,7 @@
 package com.syncfy.management.infrastructure.entities;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
-import java.time.OffsetDateTime;
 
 @Data
 @Entity

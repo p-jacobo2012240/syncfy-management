@@ -29,10 +29,11 @@ public class NotificationRepositoryImpl implements INotificationRepository {
     @Override
     public <S extends NotificationDtoDomain> S save(S s) {
         Notification notification = mapper.toEntity(s);
-        Auth auth = authRepository.findById(notification.getAuth().getAuthId()).get();
+        /**Auth auth = authRepository.findById(notification.getAuth().getAuthId()).get();
 
         notification.setAuth(auth);
-        return (S) mapper.toDomain(notificationRepository.save(notification));
+        return (S) mapper.toDomain(notificationRepository.save(notification));*/
+        return null;
     }
 
     @Override
@@ -53,9 +54,10 @@ public class NotificationRepositoryImpl implements INotificationRepository {
     @Override
     public List<NotificationDtoDomain> findNotificationsByAuth(Long authId) {
         List<Notification> alerts = notificationRepository.findAll();
-        alerts = alerts.stream()
+
+        /** alerts = alerts.stream()
                 .filter(alert -> alert.getAuth().getAuthId() == authId)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()); */
 
         return  alerts.stream()
                 .map(mapper::toDomain)

@@ -1,12 +1,13 @@
 package com.syncfy.management.infrastructure.filters;
 
 import com.syncfy.management.infrastructure.entities.Alert;
+import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.criteria.Predicate;
+
 
 @Component
 public class AlertSpecification {

@@ -12,12 +12,9 @@ import org.mapstruct.Mapping;
 )
 public interface AlertDtoMapper {
 
-    @Mapping(source = "id", target = "alertId")
     Alert toEntity(AlertDtoDomain domain);
 
-    @Mapping(source = "alertId", target = "id")
     AlertDtoDomain toDomain(Alert alert);
 
-    @Mapping(source = "auth0_id", target = "auth.id")
     AlertDtoDomain fromCreatorToDomain(AlertDtoCreatorDomain creatorDomain);
 }

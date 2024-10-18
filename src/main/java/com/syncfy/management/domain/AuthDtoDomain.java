@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class AuthDtoDomain {
 
-    private Long id;
+    private Long authId;
 
     private String email;
 

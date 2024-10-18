@@ -9,10 +9,8 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface AuthDtoMapper {
 
-    @Mapping(source = "id", target = "authId")
     Auth toEntity(AuthDtoDomain domain);
 
-    @Mapping(source = "authId", target = "id")
     AuthDtoDomain toDomain(Auth entity);
 
     AuthDtoDomain fromCreatorToDomain(AuthDtoCreatorDomain creatorDomain);

@@ -12,12 +12,9 @@ import org.mapstruct.Mapping;
 )
 public interface NotificationDtoMapper {
 
-    @Mapping(source = "id", target = "notificationId")
     Notification toEntity(NotificationDtoDomain domain);
 
-    @Mapping(source = "notificationId", target = "id")
     NotificationDtoDomain toDomain(Notification entity);
 
-    @Mapping(source = "auth0_id", target = "auth.id")
     NotificationDtoDomain fromCreatorToDomain(NotificationDtoCreatorDomain creatorDomain);
 }

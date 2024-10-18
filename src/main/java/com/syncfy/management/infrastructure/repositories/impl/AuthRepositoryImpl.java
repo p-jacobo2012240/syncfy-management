@@ -54,11 +54,12 @@ public class AuthRepositoryImpl implements IAuthRepository {
         // TEMP
         List<Auth> results = authRepository.findAll();
         AuthDtoDomain authDtoDomain = null;
-        for(Auth element: results) {
+
+        /**for(Auth element: results) {
             if(element.getEmail().equals(payloadDomain.getEmail())) {
                 authDtoDomain = mapper.toDomain(element);
             }
-        }
+        } */
         return authDtoDomain;
     }
 }

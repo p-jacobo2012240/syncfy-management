@@ -15,16 +15,8 @@ spring:
   properties:
     hibernate:
       schema: syncfy_configuration
-
-springdoc:
-  api-docs:
-    path: /api-docs
-
-keycloak:
-  auth-server-url: http://localhost:8080/
-  realm: my-realm
-  resource: my-app
-  public-client: true
-  ssl-required: external
-  credentials:
-    secret: asd-test-K$ey-2k24  # Optional for public client
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/certs

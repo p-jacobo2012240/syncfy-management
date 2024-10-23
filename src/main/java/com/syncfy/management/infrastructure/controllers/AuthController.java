@@ -10,13 +10,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins = "*" )
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
 
     @Autowired
     private IAuthService authService;
+
+    @GetMapping("/hello")
+    @ResponseStatus(HttpStatus.OK)
+    public String home() {
+        return "Hello";
+    }
 
     @PostMapping("/check-auth")
     public ResponseEntity<AuthDtoDomain> validateOAuth(@RequestBody AuthDtoPayloadDomain payloadDomain) {

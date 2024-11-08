@@ -2,18 +2,29 @@ package com.syncfy.management.infrastructure.controllers;
 
 import com.syncfy.management.domain.*;
 import com.syncfy.management.infrastructure.services.IMetricService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "*")
+
 @RestController
-@RequestMapping("/auth/syncyfy/")
-public class MetricController {
+@RequestMapping("/resource")
+public class ResourceController {
+    private Logger log = LoggerFactory.getLogger(ResourceController.class);
+
     @Autowired
     private IMetricService metricService;
+
+    @GetMapping("/hello")
+    @ResponseStatus(HttpStatus.OK)
+    public String home() {
+        log.info("hi from resource controller....");
+        return "  Hello";
+    }
 
     @PostMapping("/alert/new-alert")
     public ResponseEntity<AlertDtoDomain> newAlert(@RequestBody AlertDtoCreatorDomain creatorDomain)  {

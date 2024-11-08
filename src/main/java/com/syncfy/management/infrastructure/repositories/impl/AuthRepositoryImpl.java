@@ -3,10 +3,13 @@ package com.syncfy.management.infrastructure.repositories.impl;
 import com.syncfy.management.application.repositories.IAuthRepository;
 import com.syncfy.management.domain.AuthDtoDomain;
 import com.syncfy.management.domain.AuthDtoPayloadDomain;
+import com.syncfy.management.infrastructure.controllers.AuthController;
 import com.syncfy.management.infrastructure.entities.Auth;
 import com.syncfy.management.infrastructure.filters.AuthSpecification;
 import com.syncfy.management.infrastructure.mappers.AuthDtoMapper;
 import com.syncfy.management.infrastructure.repositories.SpringDataAuthRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,6 +23,8 @@ import java.util.Optional;
 
 @Component
 public class AuthRepositoryImpl implements IAuthRepository {
+
+    private Logger log = LoggerFactory.getLogger(AuthRepositoryImpl.class);
 
     @Autowired
     private SpringDataAuthRepository authRepository;
@@ -51,15 +56,8 @@ public class AuthRepositoryImpl implements IAuthRepository {
     }
     @Override
     public AuthDtoDomain findByContext(AuthDtoPayloadDomain payloadDomain) {
-        // TEMP
-        List<Auth> results = authRepository.findAll();
-        AuthDtoDomain authDtoDomain = null;
 
-        /**for(Auth element: results) {
-            if(element.getEmail().equals(payloadDomain.getEmail())) {
-                authDtoDomain = mapper.toDomain(element);
-            }
-        } */
-        return authDtoDomain;
+        this.log.info("auth_id = {} ", payloadDomain.getAuthId() );
+        return null;
     }
 }

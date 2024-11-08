@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class AuthDtoPayloadDomain {
 
-    private String email;
+    private String authId;
 }

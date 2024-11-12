@@ -1,6 +1,5 @@
 package com.syncfy.management.infrastructure.controllers;
 
-import com.syncfy.management.domain.AuthDtoCreatorDomain;
 import com.syncfy.management.domain.AuthDtoDomain;
 import com.syncfy.management.domain.AuthDtoPayloadDomain;
 import com.syncfy.management.infrastructure.services.IAuthService;
@@ -29,12 +28,6 @@ public class AuthController {
     @PostMapping("/check-auth")
     public ResponseEntity<AuthDtoDomain> validateOAuth(@RequestBody AuthDtoPayloadDomain payloadDomain) {
         AuthDtoDomain authDtoDomain = authService.validateOAuth(payloadDomain);
-        return new ResponseEntity<>(authDtoDomain, HttpStatus.OK);
-    }
-
-    @PostMapping("/log-auth")
-    public ResponseEntity<AuthDtoDomain> newOAuthRegister(@RequestBody AuthDtoCreatorDomain domain){
-        AuthDtoDomain authDtoDomain = authService.newOAuthRegister(domain);
         return new ResponseEntity<>(authDtoDomain, HttpStatus.OK);
     }
 }

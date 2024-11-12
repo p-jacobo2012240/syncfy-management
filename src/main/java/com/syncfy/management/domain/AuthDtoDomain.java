@@ -2,13 +2,13 @@ package com.syncfy.management.domain;
 
 import lombok.Data;
 
-import java.time.OffsetTime;
+import java.time.OffsetDateTime;
 
 @Data
 public class AuthDtoDomain {
     private String oAuthId;
-    private OffsetTime createdAt;
-    private OffsetTime updatedAt;
+    private OffsetDateTime createdAt;
+    private OffsetDateTime updatedAt;
     private Boolean isActive;
     private String customUserData;
 

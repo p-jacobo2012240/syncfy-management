@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "b63e6eb1-724a-47e6-8adf-1e6478da64f5",
+		"name": "syncfy-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17283024"
+	},
+	"item": [
+		{
+			"name": "syncfy-engine",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "token-endpoint",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "password",
+											"value": "hck123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "hck",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "password_credentials",
+											"type": "string"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "openid profile email offline_access",
+											"type": "string"
+										},
+										{
+											"key": "challengeAlgorithm",
+											"value": "S256",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "client_authentication",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/auth",
+											"type": "string"
+										},
+										{
+											"key": "tokenName",
+											"value": "sync-token",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/token",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "syncfy-id",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"realms",
+										"oauth2-syncfy-realm",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "helloAuth",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "password",
+											"value": "hck123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "hck",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "password_credentials",
+											"type": "string"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "openid profile email offline_access",
+											"type": "string"
+										},
+										{
+											"key": "challengeAlgorithm",
+											"value": "S256",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "client_authentication",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/auth",
+											"type": "string"
+										},
+										{
+											"key": "tokenName",
+											"value": "sync-token",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/token",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "syncfy-id",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/auth/hello",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"auth",
+										"hello"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "resource",
+					"item": [
+						{
+							"name": "helloResource",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "password",
+											"value": "hck123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "hck",
+											"type": "string"
+										},
+										{
+											"key": "grant_type",
+											"value": "password_credentials",
+											"type": "string"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "openid profile email offline_access",
+											"type": "string"
+										},
+										{
+											"key": "challengeAlgorithm",
+											"value": "S256",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": false,
+											"type": "boolean"
+										},
+										{
+											"key": "client_authentication",
+											"value": "header",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/auth",
+											"type": "string"
+										},
+										{
+											"key": "tokenName",
+											"value": "sync-token",
+											"type": "string"
+										},
+										{
+											"key": "accessTokenUrl",
+											"value": "http://localhost:8080/realms/oauth2-syncfy-realm/protocol/openid-connect/token",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "syncfy-id",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/resource/hello",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"resource",
+										"hello"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

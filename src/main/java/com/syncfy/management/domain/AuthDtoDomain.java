@@ -2,18 +2,20 @@ package com.syncfy.management.domain;
 
 import lombok.Data;
 
+import java.time.OffsetTime;
+
 @Data
 public class AuthDtoDomain {
+    private String oAuthId;
+    private OffsetTime createdAt;
+    private OffsetTime updatedAt;
+    private Boolean isActive;
+    private String customUserData;
 
-    private Long authId;
-
-    private String email;
-
-    private String aud;
-
-    private String iss;
-
-    private String nonce;
-
-    private String picture;
+    @Override
+    public String toString() {
+        return "AuthDtoDomain{" +
+                "customUserData='" + customUserData + '\'' +
+                '}';
+    }
 }

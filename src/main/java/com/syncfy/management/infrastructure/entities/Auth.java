@@ -2,6 +2,9 @@ package com.syncfy.management.infrastructure.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.type.YesNoConverter;
+
+import java.time.OffsetDateTime;
 
 @Data
 @Entity
@@ -10,21 +13,30 @@ public class Auth {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "auth_id")
+    @Column(name = "auth_id", unique = true)
     private Long authId;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "sub", nullable = false, unique = true) // mapping to 0Auth2 identifier
+    private String sub;
 
-    @Column(name = "aud")
-    private String aud;
+    @Column(name = "createAt", updatable = false)
+    private OffsetDateTime createdAt;
 
-    @Column(name = "iss")
-    private String iss;
+    @Column(name = "updatedAt")
+    private OffsetDateTime updatedAt;
 
-    @Column(name = "nonce")
-    private String nonce;
+    @Column(name = "isActive")
+    @Convert(converter = YesNoConverter.class)
+    private Boolean isActive;
 
-    @Column(name = "picture")
-    private String picture;
+    @PrePersist
+    protected void onCreate() {
+        createdAt = OffsetDateTime.now();
+        updatedAt = createdAt;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = OffsetDateTime.now();
+    }
 }

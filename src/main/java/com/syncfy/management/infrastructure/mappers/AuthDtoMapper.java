@@ -7,6 +7,10 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface AuthDtoMapper {
+
+    @Mapping(source = "OAuthId", target = "sub")
     Auth toEntity(AuthDtoDomain domain);
+
+    @Mapping(source = "sub", target = "OAuthId")
     AuthDtoDomain toDomain(Auth entity);
 }

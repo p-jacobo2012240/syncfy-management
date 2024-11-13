@@ -3,7 +3,6 @@ package com.syncfy.management.infrastructure.repositories.impl;
 import com.syncfy.management.application.repositories.IAuthRepository;
 import com.syncfy.management.domain.AuthDtoDomain;
 import com.syncfy.management.domain.AuthDtoPayloadDomain;
-import com.syncfy.management.infrastructure.filters.AuthSpecification;
 import com.syncfy.management.infrastructure.mappers.AuthDtoMapper;
 import com.syncfy.management.infrastructure.repositories.SpringDataAuthRepository;
 import org.slf4j.Logger;
@@ -20,9 +19,6 @@ public class AuthRepositoryImpl implements IAuthRepository {
 
     @Autowired
     private SpringDataAuthRepository authRepository;
-
-    @Autowired
-    private AuthSpecification specification;
 
     @Autowired
     private AuthDtoMapper mapper;
@@ -48,8 +44,16 @@ public class AuthRepositoryImpl implements IAuthRepository {
     }
     @Override
     public AuthDtoDomain findByContext(AuthDtoPayloadDomain payloadDomain) {
+        Optional<AuthDtoDomain> authDtoDomain = Optional.ofNullable(
+                mapper.toDomain(authRepository.findBySub(payloadDomain.getAuthId()).orElseGet(() -> {
+                        AuthDtoDomain dto = new AuthDtoDomain();
+                        dto.setOAuthId(payloadDomain.getAuthId());
 
-        this.log.info("auth_id = {} ", payloadDomain.getAuthId() );
-        return null;
+                        return authRepository.save(mapper.toEntity(dto));
+                    })
+                )
+        );
+
+        return authDtoDomain.get();
     }
 }

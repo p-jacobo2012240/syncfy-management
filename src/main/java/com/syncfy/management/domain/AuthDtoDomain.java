@@ -6,7 +6,7 @@ import java.time.OffsetDateTime;
 
 @Data
 public class AuthDtoDomain {
-    private String oAuthId;
+    private String OAuthId;
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
     private Boolean isActive;

@@ -8,14 +8,14 @@ import com.syncfy.management.infrastructure.mappers.AlertDtoMapper;
 import com.syncfy.management.infrastructure.mappers.NotificationDtoMapper;
 import com.syncfy.management.infrastructure.repositories.impl.AlertRepositoryImpl;
 import com.syncfy.management.infrastructure.repositories.impl.NotificationRepositoryImpl;
-import com.syncfy.management.infrastructure.services.IMetricService;
+import com.syncfy.management.infrastructure.services.IResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class MetricServiceImpl implements IMetricService {
+public class ResourceServiceImpl implements IResourceService {
     @Autowired
     private AlertRepositoryImpl alertRepository;
     @Autowired

@@ -1,9 +1,9 @@
 package com.syncfy.management;
 
 import com.syncfy.management.infrastructure.services.IAuthService;
-import com.syncfy.management.infrastructure.services.IMetricService;
+import com.syncfy.management.infrastructure.services.IResourceService;
 import com.syncfy.management.infrastructure.services.impl.AuthServiceImpl;
-import com.syncfy.management.infrastructure.services.impl.MetricServiceImpl;
+import com.syncfy.management.infrastructure.services.impl.ResourceServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +22,7 @@ public class CoreApplication {
 		return new AuthServiceImpl();
 	}
 	@Bean
-	public IMetricService metricService() {
-		return new MetricServiceImpl();
+	public IResourceService resourceService() {
+		return new ResourceServiceImpl();
 	}
 }

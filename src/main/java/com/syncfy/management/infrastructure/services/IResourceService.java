@@ -4,7 +4,7 @@ import com.syncfy.management.domain.*;
 
 import java.util.List;
 
-public interface IMetricService {
+public interface IResourceService {
     AlertDtoDomain newAlert(AlertDtoCreatorDomain creatorDomain);
     List<AlertDtoDomain> alertsByOAuth(String id);
     void deleteAlertByOAuth(String id);

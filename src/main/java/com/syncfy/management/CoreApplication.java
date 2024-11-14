@@ -17,10 +17,21 @@ public class CoreApplication {
 		SpringApplication.run(CoreApplication.class, args);
 	}
 
+	/**
+	 *
+	 * @return [OAuth reference service]
+	 * handle the OAuth reference by kafka features
+	 */
 	@Bean
 	public IAuthService authService() {
 		return new AuthServiceImpl();
 	}
+
+	/**
+	 *
+	 * @return [facade pattern for all resource methods]
+	 * handle all resource services
+	 */
 	@Bean
 	public IResourceService resourceService() {
 		return new ResourceServiceImpl();

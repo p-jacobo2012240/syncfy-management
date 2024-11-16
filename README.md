@@ -10,6 +10,8 @@ required for sync files, and realms config for OAuth
 - OAuth2 protection
 - Performant transaction system
 
+## DB Architecture
+![DB-Architecture](https://raw.githubusercontent.com/p-jacobo2012240/syncfy-management/master/src/main/resources/diagrams/ERD-Syncfy-DB-reboot-2k24.png)
 
 ## Requirements
 

@@ -1,0 +1,9 @@
+ERD Relationships Summary
+User ↔ Notification (1-to-Many): A user has multiple notification configurations.
+User ↔ Notification_Log (1-to-Many): Each notification log entry links to a specific user.
+User ↔ File (1-to-Many): A user can own multiple files.
+User ↔ Job (1-to-Many): Each user can have multiple jobs scheduled.
+User ↔ Bucket (1-to-Many): Each user may have multiple API keys for DigitalOcean.
+File ↔ Event (1-to-Many): Events relate to specific files for logging file activities.
+File ↔ File_Tag_Association ↔ File_Tag (Many-to-Many): Files can have multiple tags.
+Event ↔ Kafka_Topic (Many-to-One or Many-to-Many): Events might be broadcasted over Kafka topics.
